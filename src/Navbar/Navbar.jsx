@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-
+import { AuthContext } from "../Provider/AuthProvider";
+import toast, { Toaster } from "react-hot-toast";
 
 const Navbar = () => {
+  const {user,logOut} = useContext(AuthContext);
 
     const navLinks = <>
      
@@ -10,8 +13,21 @@ const Navbar = () => {
      <li> <NavLink to='/cart' >My Cart</NavLink> </li>
     
     </>
+
+    const handleLogOut = () =>{
+      logOut()
+      .then(()=>{
+        toast.success('Logged Out successfully')
+      })
+      .catch(()=>{
+        toast.error('Something wrong')
+      })
+    }
     return (
       <div>
+        <div>
+          <Toaster />
+        </div>
         <div className="navbar bg-base-100">
           <div className="navbar-start">
             <div className="dropdown">
@@ -35,18 +51,32 @@ const Navbar = () => {
                 tabIndex={0}
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
               >
-               {navLinks}
+                {navLinks}
               </ul>
             </div>
             <a className="btn btn-ghost normal-case text-xl">FashionHouse</a>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">
-             {navLinks}
-            </ul>
+            <ul className="menu menu-horizontal px-1">{navLinks}</ul>
           </div>
           <div className="navbar-end">
-            <Link to='/login' className="btn">Login</Link>
+            {user ? (
+              <>
+                <h1>{user.displayName}</h1>
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                  <div className="w-10 rounded-full">
+                    <img src={user.photoURL} />
+                  </div>
+                </label>
+                <Link onClick={handleLogOut} className="btn">
+                  Logout
+                </Link>
+              </>
+            ) : (
+              <Link to="/login" className="btn">
+                Login
+              </Link>
+            )}
           </div>
         </div>
       </div>

@@ -9,26 +9,40 @@ const Register = () => {
     const {createUser} = useContext(AuthContext);
 
     const handleRegisterForm = event => {
-        event.preventDefault();
-        const form = event.target;
-        const name = form.name.value;
-        const photo = form.photo.value;
-        const email = form.email.value;
-        const password = form.password.value;
+      event.preventDefault();
+      const form = event.target;
+      const name = form.name.value;
+      const photo = form.photo.value;
+      const email = form.email.value;
+      const password = form.password.value;
 
-        console.log(name,photo,email,password)
+      console.log(name, photo, email, password);
 
+      // Check if the password is less than 6 characters
+      if (password.length < 6) {
+        return toast.error("Password must be at least 6 characters long");
+      }
 
-        createUser(email,password)
-        .then(result =>{
-            console.log(result.user)
-            toast.success("Successfully Registered!");
-            form.reset()
+      // Check if the password contains a capital letter
+      if (!/[A-Z]/.test(password)) {
+        return toast.error("Password must contain at least one capital letter");
+      }
+
+      // Check if the password contains a special character
+      if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+        return toast.error("Password must contain at least one special character");
+      }
+
+      createUser(email, password)
+        .then((result) => {
+          console.log(result.user);
+          toast.success("Successfully Registered!");
+          form.reset();
         })
-        .catch(error =>{
-            console.log(error.message)
-            toast.error(`${error.message}`)
-        })
+        .catch((error) => {
+          console.log(error.message);
+          toast.error(`${error.message}`);
+        });
     }
     return (
       <div>

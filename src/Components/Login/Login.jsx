@@ -2,10 +2,11 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
     
-    const {loginEmail} = useContext(AuthContext);
+    const { loginEmail, loginGoogle } = useContext(AuthContext);
 
     
     const handleLoginForm = (event) => {
@@ -27,6 +28,17 @@ const Login = () => {
           toast.error(`${error.message}`);
         });
     };
+
+    const handleLoginGoogle = () => {
+        loginGoogle()
+        .then(result =>{
+            console.log(result.user)
+            toast.success('successfully logged with google')
+        })
+        .catch(error =>{
+            toast.error(`${error.message}`)
+        })
+    }
     return (
       <div>
         <div>
@@ -68,6 +80,12 @@ const Login = () => {
                   <button className="btn btn-primary">Login</button>
                 </div>
               </form>
+              <div onClick={handleLoginGoogle} className="w-[100%] flex justify-center mb-4">
+                <div className="flex justify-center items-center w-3/4 border-2 px-8 py-3 rounded-xl hover:bg-slate-200">
+                  <FcGoogle className="text-3xl mr-2"></FcGoogle>
+                  <span className="font-bold">Login With Google</span>
+                </div>
+              </div>
               <h1 className="text-center pb-5">
                 Are you new? Please{" "}
                 <Link

@@ -6,6 +6,7 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import auth from '../firebase/firebase.config'
 import PropTypes from "prop-types";
@@ -46,7 +47,22 @@ const AuthProvider = ({children}) => {
         return signOut(auth);
     }
 
-    const authInfo = {user, createUser, loginEmail, loginGoogle,logOut };
+    const userUpdateProfile = (name,photo) =>{
+       
+        return updateProfile(auth.currentUser, {
+          displayName: name,
+          photoURL: photo,
+        });
+    }
+
+    const authInfo = {
+      user,
+      createUser,
+      loginEmail,
+      loginGoogle,
+      logOut,
+      userUpdateProfile,
+    };
     return (
         <AuthContext.Provider  value={authInfo}>
             {children}

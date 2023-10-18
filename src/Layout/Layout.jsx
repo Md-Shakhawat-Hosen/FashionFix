@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import AddProduct from "../Components/AddProduct/AddProduct";
+import Cart from "../Components/Cart/Cart";
 import BrandName from "../Components/Home/BrandName";
 import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
@@ -54,6 +55,15 @@ const myRoute = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/products/${params.id}`),
+      },
+      {
+        path: "/cart",
+        element: (
+          <PrivateRoute>
+            <Cart></Cart>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("http://localhost:5000/cart"),
       },
     ],
   },

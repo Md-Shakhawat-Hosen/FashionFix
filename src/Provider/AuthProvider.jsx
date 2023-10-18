@@ -29,7 +29,7 @@ const AuthProvider = ({children}) => {
 
         return () => unSubscribe();
      },[])
-     console.log(user)
+    //  console.log(user)
     const googleProvider = new GoogleAuthProvider();
     
 

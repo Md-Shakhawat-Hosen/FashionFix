@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import AddProduct from "../Components/AddProduct/AddProduct";
 import Cart from "../Components/Cart/Cart";
+import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import BrandName from "../Components/Home/BrandName";
 import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
@@ -15,11 +16,12 @@ const myRoute = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/brand"),
+        loader: () => fetch("https://fashion-server.vercel.app/brand"),
       },
       {
         path: "/addproduct",
@@ -45,7 +47,7 @@ const myRoute = createBrowserRouter([
         path: "/brand/:id",
         element: <ShowProduct></ShowProduct>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/brand/${params.id}`),
+          fetch(`https://fashion-server.vercel.app/brand/${params.id}`),
       },
       {
         path: "/products/:id",
@@ -55,11 +57,15 @@ const myRoute = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(`https://fashion-server.vercel.app/products/${params.id}`),
       },
       {
-          path: '/update/:id',
-          element: <UpdateProduct></UpdateProduct>,
+        path: "/update/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateProduct></UpdateProduct>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/cart",
@@ -68,11 +74,10 @@ const myRoute = createBrowserRouter([
             <Cart></Cart>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/cart"),
+        loader: () => fetch("https://fashion-server.vercel.app/cart"),
       },
     ],
   },
 ]);
-
 
 export default myRoute;

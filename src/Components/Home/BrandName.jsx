@@ -10,7 +10,7 @@ const BrandName = () => {
     const brandName = { name, photo };
     console.log(brandName);
 
-    fetch("http://localhost:5000/brand", {
+    fetch("https://fashion-server.vercel.app/brand", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -21,8 +21,8 @@ const BrandName = () => {
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
-            toast.success("successfully added");
-            form.reset();
+          toast.success("successfully added");
+          form.reset();
         }
       });
   };

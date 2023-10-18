@@ -12,10 +12,10 @@ const AddProduct = () => {
     const rating = form.rating.value;
     const short = form.short.value;
 
-    const brandInfo = { name, photo,brandName,type,price,rating,short };
+    const brandInfo = { name, photo, brandName, type, price, rating, short };
     console.log(brandInfo);
 
-    fetch("http://localhost:5000/products", {
+    fetch("https://fashion-server.vercel.app/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",

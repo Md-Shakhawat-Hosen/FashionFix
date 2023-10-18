@@ -56,11 +56,11 @@ const ShowProduct = () => {
                     </h1>
                   </div>
                   <div className="py-3 flex gap-2">
-                    <div className="flex-1">
+                    <Link to={`/update/${brand._id}`} className="flex-1">
                       <button className="bg-cyan-400 text-white p-4 w-full">
                         Update
                       </button>
-                    </div>
+                    </Link>
                     <Link to={`/products/${brand._id}`} className="flex-1">
                       <button className="bg-cyan-400 text-white p-4 w-full">
                         Details

@@ -17,6 +17,7 @@ import { useEffect } from "react";
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({children}) => {
+    const [dark, setDark] = useState(true);
 
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true);
@@ -66,7 +67,9 @@ const AuthProvider = ({children}) => {
       loginGoogle,
       logOut,
       userUpdateProfile,
-      loading
+      loading,
+      dark,
+      setDark,
     };
     return (
         <AuthContext.Provider  value={authInfo}>

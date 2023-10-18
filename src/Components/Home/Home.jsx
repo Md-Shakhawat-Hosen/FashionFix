@@ -1,5 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Banner from "../Banner/Banner";
+import HomeBlog from "../HomeBlog/HomeBlog";
+import HomeSneker from "../HomeSneker/HomeSneker";
 
 
 const Home = () => {
@@ -27,7 +29,9 @@ const Home = () => {
             </Link>
           ))}
         </div>
-        
+        <HomeSneker></HomeSneker>
+
+        <HomeBlog></HomeBlog>
       </div>
     );
 };

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -7,6 +7,8 @@ import toast, { Toaster } from "react-hot-toast";
 const Register = () => {
     
     const { createUser, userUpdateProfile } = useContext(AuthContext);
+    const navigate = useNavigate()
+    const location = useLocation()
 
     const handleRegisterForm = event => {
       event.preventDefault();
@@ -39,6 +41,11 @@ const Register = () => {
           userUpdateProfile(name,photo)
           .then(()=>{
             toast.success("Successfully Registered!");
+            setTimeout(function () {
+              location.reload();
+            }, 10);
+
+            navigate(location.state ? `${location.state}` : "/");
           })
           
           form.reset();

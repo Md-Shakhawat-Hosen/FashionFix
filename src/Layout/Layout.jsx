@@ -3,6 +3,7 @@ import AddProduct from "../Components/AddProduct/AddProduct";
 import BrandName from "../Components/Home/BrandName";
 import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
+import ProductDetails from "../Components/ProductDetetails/ProductDetails";
 import Register from "../Components/Register/Register";
 import ShowProduct from "../Components/ShowProduct/ShowProduct";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -41,7 +42,18 @@ const myRoute = createBrowserRouter([
       {
         path: "/brand/:id",
         element: <ShowProduct></ShowProduct>,
-        loader: ({params}) => fetch(`http://localhost:5000/brand/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/brand/${params.id}`),
+      },
+      {
+        path: "/products/:id",
+        element: (
+          <PrivateRoute>
+            <ProductDetails></ProductDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/products/${params.id}`),
       },
     ],
   },

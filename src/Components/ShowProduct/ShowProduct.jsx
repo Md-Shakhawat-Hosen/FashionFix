@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 const ShowProduct = () => {
@@ -24,7 +24,9 @@ const ShowProduct = () => {
       <div>
         {remaining.length === 0 ? (
           <div className="h-screen flex justify-center items-center">
-            <h1 className="font-bold text-3xl">There is no available product</h1>
+            <h1 className="font-bold text-3xl">
+              There is no available product
+            </h1>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -59,11 +61,11 @@ const ShowProduct = () => {
                         Update
                       </button>
                     </div>
-                    <div className="flex-1">
+                    <Link to={`/products/${brand._id}`} className="flex-1">
                       <button className="bg-cyan-400 text-white p-4 w-full">
                         Details
                       </button>
-                    </div>
+                    </Link>
                   </div>
                 </div>
               </div>

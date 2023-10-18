@@ -12,7 +12,7 @@ const ProductDetails = () => {
       .then((res) => res.json())
       .then((data) => setDataCart(data));
   }, []);
-  console.log(dataCart);
+  // console.log(dataCart);
   //    const checkDuplicate = [];
 
   const handleAddCart = (product) => {
@@ -45,7 +45,7 @@ const ProductDetails = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           if (data.insertedId) {
             //  checkDuplicate.push(product._id);
             toast.success("Successfully added to cart");

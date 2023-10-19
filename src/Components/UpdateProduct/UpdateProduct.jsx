@@ -54,7 +54,7 @@ const UpdateProduct = () => {
 
   return (
     <div>
-      <div className="bg-slate-200 p-9 ">
+      <div className=" p-9 ">
         <div>
           <Toaster />
         </div>
@@ -70,7 +70,7 @@ const UpdateProduct = () => {
                   placeholder="Photo URL"
                   name="photo"
                   defaultValue={photo}
-                  className="input input-bordered w-full"
+                  className="input input-bordered bg-slate-100 text-black w-full"
                 />
               </div>
               <div className="form-control w-full">
@@ -82,7 +82,7 @@ const UpdateProduct = () => {
                   placeholder="Name"
                   name="name"
                   defaultValue={name}
-                  className="input input-bordered w-full"
+                  className="input input-bordered bg-slate-100 text-black w-full"
                 />
               </div>
             </div>
@@ -96,7 +96,7 @@ const UpdateProduct = () => {
                   placeholder="Brand Name"
                   name="brandName"
                   defaultValue={brandName}
-                  className="input input-bordered w-full"
+                  className="input input-bordered bg-slate-100 text-black w-full"
                 />
               </div>
               <div className="form-control w-full">
@@ -108,7 +108,7 @@ const UpdateProduct = () => {
                   placeholder="Type"
                   name="type"
                   defaultValue={type}
-                  className="input input-bordered w-full"
+                  className="input input-bordered bg-slate-100 text-black w-full"
                 />
               </div>
             </div>
@@ -122,7 +122,7 @@ const UpdateProduct = () => {
                   placeholder="Price"
                   name="price"
                   defaultValue={price}
-                  className="input input-bordered w-full"
+                  className="input input-bordered bg-slate-100 text-black w-full"
                 />
               </div>
               <div className="form-control w-full">
@@ -134,7 +134,7 @@ const UpdateProduct = () => {
                   placeholder="Rating"
                   name="rating"
                   defaultValue={rating}
-                  className="input input-bordered w-full"
+                  className="input input-bordered bg-slate-100 text-black w-full"
                 />
               </div>
             </div>

@@ -9,23 +9,23 @@ const Navbar = () => {
 
     const navLinks = <>
      
-     <li className="mr-4"> <NavLink className={({ isActive, isPending }) =>
+     <li className="mr-4 font-bold"> <NavLink className={({ isActive, isPending }) =>
                       isActive
-                        ? "underline"
+                        ? "border-b-4 border-yellow-600"
                         : isPending
                         ? "pending"
                         : ""
                     }  to='/' >Home</NavLink> </li>
-     <li className="mr-4"> <NavLink className={({ isActive, isPending }) =>
+     <li className="mr-4 font-bold"> <NavLink className={({ isActive, isPending }) =>
                       isActive
-                        ? "underline"
+                        ? "border-b-4 border-yellow-600"
                         : isPending
                         ? "pending"
                         : ""
                     }  to='/addproduct' >Add Product</NavLink> </li>
-     <li className="mr-4"> <NavLink className={({ isActive, isPending }) =>
+     <li className="mr-4 font-bold"> <NavLink className={({ isActive, isPending }) =>
                       isActive
-                        ? "underline"
+                        ? "border-b-4 border-yellow-600"
                         : isPending
                         ? "pending"
                         : ""
@@ -43,13 +43,13 @@ const Navbar = () => {
       })
     }
     return (
-      <div>
+      <div className="px-4">
         <div>
           <Toaster />
         </div>
         <div className="navbar">
           <div className="navbar-start">
-            <div className="dropdown">
+            <div className="dropdown z-10">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -73,12 +73,21 @@ const Navbar = () => {
                 {navLinks}
               </ul>
             </div>
-            <a className="btn btn-ghost normal-case text-xl">FashionHouse</a>
+            <div className="flex items-center">
+              <img
+                className="w-[50px]"
+                src="https://i.ibb.co/dQhNVVY/new-logo.png"
+                alt=""
+              />
+              <a className=" normal-case text-xl font-bold hidden md:block">
+                Fashion<span className="text-yellow-600">Fix</span>{" "}
+              </a>
+            </div>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu-horizontal px-1">{navLinks}</ul>
           </div>
-          <div className="navbar-end">
+          <div className="navbar-end space-x-4">
             {user ? (
               <>
                 <h1>{user.displayName}</h1>

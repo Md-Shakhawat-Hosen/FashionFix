@@ -7,10 +7,10 @@ import HomeSneker from "../HomeSneker/HomeSneker";
 const Home = () => {
     const brandLoaded = useLoaderData();
     return (
-      <div>
+      <div className="px-6">
         <Banner></Banner>
 
-        <h1 className="text-center font-bold text-3xl mb-9">Our Brand</h1>
+        <h1 className="text-center font-bold text-3xl mb-9 text-yellow-600">Our Brand</h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {brandLoaded.map((brand) => (
             <Link

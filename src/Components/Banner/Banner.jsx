@@ -12,12 +12,12 @@ const Banner = () => {
       <div style={bg} className="mb-10 text-white">
         <div className="flex flex-col lg:flex-row items-center h-[80vh]">
           <div className="flex-1 pl-6 space-y-4">
-            <h1 className="font-bold text-3xl">
+            <h1 className="font-bold text-3xl text-yellow-600">
               Discover Limitless Possibilities
             </h1>
             <p>
               Unleash innovation and explore a world of endless opportunities
-              with [FashionHouse]. Our commitment to excellence and cutting-edge
+              with [ FashionFix ]. Our commitment to excellence and cutting-edge
               solutions empowers you to redefine boundaries. Join us on a
               journey where creativity meets functionality, and together, we will
               shape the future.

@@ -17,7 +17,9 @@ const HomeBlog = () => {
         </div>
 
         <div>
-          <h1 className="text-center font-bold text-3xl my-10">Our Collection</h1>
+          <h1 className="text-center font-bold text-3xl my-10 text-yellow-600">
+            Our Collection
+          </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div>
               <img
@@ -50,7 +52,7 @@ const HomeBlog = () => {
             <div>
               <img
                 className="w-[400px] h-[400px] rounded-lg"
-                src="https://i.ibb.co/7VXJdLR/levis-1.jpg"
+                src="https://i.ibb.co/P1RjhTR/snee.jpg"
                 alt=""
               />
             </div>

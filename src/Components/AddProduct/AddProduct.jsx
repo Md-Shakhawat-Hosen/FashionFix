@@ -33,7 +33,7 @@ const AddProduct = () => {
   };
   return (
     <div>
-      <div className="bg-slate-200 p-9 ">
+      <div className=" p-9 ">
         <div>
           <Toaster />
         </div>

@@ -59,7 +59,7 @@ const ProductDetails = () => {
     }
   };
   return (
-    <div>
+    <div className="px-6">
       <div>
         <Toaster />
       </div>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
+import { AiOutlineDelete } from "react-icons/ai";
 
 const Cart = () => {
   const myCartLoaded = useLoaderData();
@@ -23,20 +24,20 @@ const Cart = () => {
       });
   };
   return (
-    <div className="h-[80vh]">
-      <div className="overflow-x-auto">
+    <div className="h-[80vh] mt-10">
+      <div className="overflow-x-auto px-6">
         <table className="table">
           {/* head */}
-          <thead>
+          <thead className="text-yellow-600">
             <tr>
-              <th>
+              <th className="">
                 <label>SL</label>
               </th>
               <th>Name</th>
               <th>Brand Name</th>
               <th>Price</th>
               <th>Action</th>
-              <th></th>
+          
             </tr>
           </thead>
           <tbody>
@@ -69,9 +70,12 @@ const Cart = () => {
                 <th>
                   <button
                     onClick={() => handleCartDelete(prod._id)}
-                    className="btn"
+                    className=""
                   >
-                    X
+                    <div className="flex items-center gap-2 border p-2 rounded-lg border-yellow-600 hover:bg-yellow-200">
+                      <AiOutlineDelete></AiOutlineDelete>
+                      <span>Delete</span>
+                    </div>
                   </button>
                 </th>
               </tr>

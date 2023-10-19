@@ -6,8 +6,6 @@ import HomeSneker from "../HomeSneker/HomeSneker";
 
 const Home = () => {
     const brandLoaded = useLoaderData();
-    // console.log(brandLoaded);
-
     return (
       <div>
         <Banner></Banner>

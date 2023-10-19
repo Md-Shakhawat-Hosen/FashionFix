@@ -8,6 +8,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 const Root = () => {
   const {dark} = useContext(AuthContext);
+
   // console.log(dark)
     return (
       <div>

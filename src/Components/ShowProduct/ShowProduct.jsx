@@ -28,7 +28,9 @@ const ShowProduct = () => {
       <div>
         <AddSlider></AddSlider>
       </div>
-       <h1 className="font-bold text-2xl mb-10 text-center">Our Authentic Products</h1>
+      <h1 className="font-bold text-2xl mb-10 text-center">
+        Our Authentic Products
+      </h1>
       {remaining.length === 0 ? (
         <div className="h-screen flex justify-center items-center">
           <h1 className="font-bold text-3xl">There is no available product</h1>

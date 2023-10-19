@@ -75,8 +75,8 @@ const Navbar = () => {
             </div>
             <div className="flex items-center">
               <img
-                className="w-[50px]"
-                src="https://i.ibb.co/dQhNVVY/new-logo.png"
+                className="w-[50px] lg:mr-2"
+                src="https://i.ibb.co/PwZ2P36/Ffashion-Fix-removebg-preview.png"
                 alt=""
               />
               <a className=" normal-case text-xl font-bold hidden md:block">

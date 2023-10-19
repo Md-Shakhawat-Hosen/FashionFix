@@ -11,7 +11,7 @@ const UpdateProduct = () => {
     fetch(`https://fashion-server.vercel.app/products/${params.id}`)
       .then((res) => res.json())
       .then((data) => setUpdateProduct(data));
-  }, []);
+  },[]);
   // console.log(params);
   // console.log(updateProduct)
   const { name, photo, brandName, type, price, rating } = updateProduct;

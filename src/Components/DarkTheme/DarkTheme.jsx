@@ -2,7 +2,7 @@ import { CiDark } from "react-icons/ci";
 import { BiSun } from "react-icons/bi";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 
 const DarkTheme = () => {
@@ -12,49 +12,50 @@ const DarkTheme = () => {
 
   // setDark(localData[0])
 
-  useEffect(()=>{
-       const localData = JSON.parse(localStorage.getItem("darkTheme"));
-       setDark(!localData[0])
-  },[])
+  // useEffect(()=>{
+  //      const localData = JSON.parse(localStorage.getItem("darkTheme"));
+  //      const dark = localData[0]
+  //      setDark(!dark)
+  // },[])
 
   // console.log(localData[0])
   
-  const darkHandleClick = () => {
-        localStorage.clear()
-        const theme = [];
+  // const darkHandleClick = () => {
+  //       localStorage.clear()
+  //       const theme = [];
 
-        const localData = JSON.parse(localStorage.getItem("darkTheme"));
+  //       const localData = JSON.parse(localStorage.getItem("darkTheme"));
 
-        if (!localData) {
-          theme.push(dark);
-          localStorage.setItem("darkTheme", JSON.stringify(theme));
-        } else {
-          theme.push(...localData, dark);
-          localStorage.setItem("darkTheme", JSON.stringify(theme));
-        }
+  //       if (!localData) {
+  //         theme.push(dark);
+  //         localStorage.setItem("darkTheme", JSON.stringify(theme));
+  //       } else {
+  //         theme.push(...localData, dark);
+  //         localStorage.setItem("darkTheme", JSON.stringify(theme));
+  //       }
 
 
-        setDark(!theme[0])
+  //       setDark(!theme[0])
 
-  }
+  // }
 
-  const sunHandleClick = () =>{
-    localStorage.clear()
-    const theme = [];
+  // const sunHandleClick = () =>{
+  //   localStorage.clear()
+  //   const theme = [];
 
-    const localData = JSON.parse(localStorage.getItem("darkTheme"));
+  //   const localData = JSON.parse(localStorage.getItem("darkTheme"));
 
-    if (!localData) {
-      theme.push(dark);
-      localStorage.setItem("darkTheme", JSON.stringify(theme));
-    } else {
-      theme.push(...localData, dark);
-      localStorage.setItem("darkTheme", JSON.stringify(theme));
-    }
+  //   if (!localData) {
+  //     theme.push(dark);
+  //     localStorage.setItem("darkTheme", JSON.stringify(theme));
+  //   } else {
+  //     theme.push(...localData, dark);
+  //     localStorage.setItem("darkTheme", JSON.stringify(theme));
+  //   }
 
-    setDark(!theme[0]);
+  //   setDark(!theme[0]);
 
-  }
+  // }
 
     
     
@@ -63,13 +64,13 @@ const DarkTheme = () => {
       {dark ? (
         <CiDark
           className="text-4xl font-black"
-          // onClick={() => setDark(!dark)}
-          onClick={darkHandleClick}
+          onClick={() => setDark(!dark)}
+          // onClick={darkHandleClick}
         ></CiDark>
       ) : (
         <BiSun className="text-4xl"
-        onClick={sunHandleClick}
-        //  onClick={() => setDark(!dark)}
+        // onClick={sunHandleClick}
+         onClick={() => setDark(!dark)}
          ></BiSun>
       )}
     </div>

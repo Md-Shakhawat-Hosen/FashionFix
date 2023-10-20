@@ -10,7 +10,7 @@ const Login = () => {
     const location = useLocation()
     const navigate = useNavigate()
 
-    console.log(location)
+    // console.log(location)
     const handleLoginForm = (event) => {
       event.preventDefault();
       const form = event.target;
@@ -87,10 +87,10 @@ const Login = () => {
               <div onClick={handleLoginGoogle} className="w-[100%] flex justify-center mb-4">
                 <div className="flex justify-center items-center w-3/4 border-2 px-8 py-3 rounded-xl hover:bg-slate-200">
                   <FcGoogle className="text-3xl mr-2"></FcGoogle>
-                  <span className="font-bold">Login With Google</span>
+                  <span className="font-bold text-black">Login With Google</span>
                 </div>
               </div>
-              <h1 className="text-center pb-5">
+              <h1 className="text-center pb-5 text-black">
                 Are you new? Please{" "}
                 <Link
                   className="text-cyan-400 font-bold border-b-2 border-cyan-600"

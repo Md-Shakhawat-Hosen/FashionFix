@@ -2,11 +2,16 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
 import { AiOutlineDelete } from "react-icons/ai";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Cart = () => {
+  const {user} = useContext(AuthContext);
   const myCartLoaded = useLoaderData();
 
-  const [myCart, setMyCart] = useState(myCartLoaded);
+  const userCart = myCartLoaded.filter( cart => cart.email === user.email);
+
+  const [myCart, setMyCart] = useState(userCart);
   // console.log(myCart)
 
   const handleCartDelete = (id) => {

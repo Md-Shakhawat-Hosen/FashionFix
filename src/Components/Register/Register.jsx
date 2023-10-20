@@ -120,7 +120,7 @@ const Register = () => {
                   <button className="btn btn-primary">Register</button>
                 </div>
               </form>
-              <h1 className="text-center pb-5">
+              <h1 className="text-center pb-5 text-black">
                 Already Have an Account? Please{" "}
                 <Link
                   className="text-cyan-400 font-bold border-b-2 border-cyan-600"

@@ -2,6 +2,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import AddSlider from "../AddSlider/AddSlider";
+import Rating from "@mui/material/Rating";
+import Stack from "@mui/material/Stack";
+
 
 const ShowProduct = () => {
   const single = useLoaderData();
@@ -23,12 +26,16 @@ const ShowProduct = () => {
   );
   // console.log(remaining);
 
+
+
   return (
     <div className="px-6">
-      <div>{remaining.length === 0 ?  ''
-       : 
-      <AddSlider remaining={remaining}></AddSlider>}
-
+      <div>
+        {remaining.length === 0 ? (
+          ""
+        ) : (
+          <AddSlider remaining={remaining}></AddSlider>
+        )}
       </div>
 
       {remaining.length === 0 ? (
@@ -37,7 +44,9 @@ const ShowProduct = () => {
         </div>
       ) : (
         <div>
-          <h1 className="font-bold text-3xl text-center mb-11">Brand Products</h1>
+          <h1 className="font-bold text-3xl text-center mb-11">
+            Brand Products
+          </h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {remaining.map((brand) => (
               <div key={brand._id} className="shadow-lg rounded-lg">
@@ -60,18 +69,19 @@ const ShowProduct = () => {
                     <h1 className="font-bold text-xl ">
                       Price: {brand.price}$
                     </h1>
-                    <h1 className="font-bold text-xl ">
-                      Rating: {brand.rating}
-                    </h1>
+                    <Stack spacing={1}>
+                      <Rating name="size-medium" value={brand.rating}  />
+                      
+                    </Stack>
                   </div>
                   <div className="py-3 flex gap-2">
                     <Link to={`/update/${brand._id}`} className="flex-1">
-                      <button className="bg-cyan-400 text-white p-4 w-full">
+                      <button className="bg-yellow-600 text-white p-4 w-full font-bold">
                         Update
                       </button>
                     </Link>
                     <Link to={`/products/${brand._id}`} className="flex-1">
-                      <button className="bg-cyan-400 text-white p-4 w-full">
+                      <button className="bg-cyan-400 text-white p-4 w-full font-bold">
                         Details
                       </button>
                     </Link>

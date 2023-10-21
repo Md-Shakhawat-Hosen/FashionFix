@@ -23,7 +23,7 @@ const Home = () => {
                 src={brand.photo}
                 alt=""
               />
-              <h1 className="font-bold text-2xl p-3">{brand.name}</h1>
+              <h1 className="font-bold text-2xl p-3 text-yellow-600">{brand.name}</h1>
             </Link>
           ))}
         </div>

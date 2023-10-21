@@ -13,7 +13,7 @@ const AddProduct = () => {
     const short = form.short.value;
 
     const brandInfo = { name, photo, brandName, type, price, rating, short };
-    console.log(brandInfo);
+    // console.log(brandInfo);
 
     fetch("https://fashion-server.vercel.app/products", {
       method: "POST",
@@ -48,7 +48,7 @@ const AddProduct = () => {
                   type="text"
                   placeholder="Photo URL"
                   name="photo"
-                  className="input input-bordered w-full"
+                  className="input input-bordered w-full bg-slate-200 text-black"
                 />
               </div>
               <div className="form-control w-full">
@@ -59,7 +59,7 @@ const AddProduct = () => {
                   type="text"
                   placeholder="Name"
                   name="name"
-                  className="input input-bordered w-full"
+                  className="input input-bordered w-full bg-slate-200 text-black"
                 />
               </div>
             </div>
@@ -72,9 +72,30 @@ const AddProduct = () => {
                   type="text"
                   placeholder="Brand Name"
                   name="brandName"
-                  className="input input-bordered w-full"
+                  className="input input-bordered w-full bg-slate-200"
                 />
               </div>
+              {/* <div className="form-control w-full">
+                <label className="label">
+                  <span className="label-text">Brand Name</span>
+                </label>
+                <select
+                  type="text"
+                  name="brandName"
+                  className="select select-bordered w-full text-black bg-slate-200 "
+                >
+                  <option disabled selected>
+                    Brand Name
+                  </option>
+                  <option className="text-black">Zara</option>
+                  <option className="text-black">Gucci</option>
+                  <option className="text-black">H&M</option>
+                  <option className="text-black">Adidas</option>
+                  <option className="text-black">Nike</option>
+                  <option className="text-black">Levis</option>
+                </select>
+              </div> */}
+
               <div className="form-control w-full">
                 <label className="label">
                   <span className="label-text">Type</span>
@@ -83,7 +104,7 @@ const AddProduct = () => {
                   type="text"
                   placeholder="Type"
                   name="type"
-                  className="input input-bordered w-full"
+                  className="input input-bordered w-full bg-slate-200 text-black"
                 />
               </div>
             </div>
@@ -96,7 +117,7 @@ const AddProduct = () => {
                   type="text"
                   placeholder="Price"
                   name="price"
-                  className="input input-bordered w-full"
+                  className="input input-bordered w-full bg-slate-200 text-black"
                 />
               </div>
               <div className="form-control w-full">
@@ -107,7 +128,7 @@ const AddProduct = () => {
                   type="text"
                   placeholder="Rating"
                   name="rating"
-                  className="input input-bordered w-full"
+                  className="input input-bordered w-full bg-slate-200 text-black"
                 />
               </div>
             </div>
@@ -124,7 +145,7 @@ const AddProduct = () => {
                 rows="5"
               ></textarea>
             </div>
-            <button className="bg-cyan-300 text-white font-bold p-4 w-full mt-7 rounded-lg">
+            <button className="bg-yellow-600 text-white font-bold p-4 w-full mt-7 rounded-lg">
               Add Product
             </button>
           </form>

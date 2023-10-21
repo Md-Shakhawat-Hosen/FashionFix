@@ -26,6 +26,7 @@ const Banner = () => {
               Feel free to let me know if you have a specific theme or purpose
               in mind, and I can tailor the header and description accordingly!
             </p>
+            <button className='p-4 bg-yellow-600 text-white font-bold'>Read More</button>
           </div>
           <div className='flex-1'></div>
         </div>
